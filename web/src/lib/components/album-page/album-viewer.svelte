@@ -1,24 +1,22 @@
 <script lang="ts">
   import SelectAllAssets from '$lib/components/photos-page/actions/select-all-assets.svelte';
-  import { assetViewingStore } from '$lib/stores/asset-viewing.store';
-  import { dragAndDropFilesStore } from '$lib/stores/drag-and-drop-files.store';
-  import { fileUploadHandler, openFileUploadDialog } from '$lib/utils/file-uploader';
-  import type { AlbumResponseDto, SharedLinkResponseDto, UserResponseDto } from '@immich/sdk';
-  import { createAssetInteractionStore } from '$lib/stores/asset-interaction.store';
-  import { AssetStore } from '$lib/stores/assets.store';
-  import { downloadAlbum } from '$lib/utils/asset-utils';
+  import {assetViewingStore} from '$lib/stores/asset-viewing.store';
+  import {dragAndDropFilesStore} from '$lib/stores/drag-and-drop-files.store';
+  import {fileUploadHandler, openFileUploadDialog} from '$lib/utils/file-uploader';
+  import type {AlbumResponseDto, SharedLinkResponseDto, UserResponseDto} from '@immich/sdk';
+  import {createAssetInteractionStore} from '$lib/stores/asset-interaction.store';
+  import {AssetStore} from '$lib/stores/assets.store';
   import CircleIconButton from '../elements/buttons/circle-icon-button.svelte';
   import DownloadAction from '../photos-page/actions/download-action.svelte';
   import AssetGrid from '../photos-page/asset-grid.svelte';
   import AssetSelectControlBar from '../photos-page/asset-select-control-bar.svelte';
   import ControlAppBar from '../shared-components/control-app-bar.svelte';
   import ImmichLogoSmallLink from '../shared-components/immich-logo-small-link.svelte';
-  import ThemeButton from '../shared-components/theme-button.svelte';
-  import { shortcut } from '$lib/actions/shortcut';
-  import { mdiFileImagePlusOutline, mdiFolderDownloadOutline } from '@mdi/js';
-  import { handlePromiseError } from '$lib/utils';
+  import {shortcut} from '$lib/actions/shortcut';
+  import {mdiFileImagePlusOutline} from '@mdi/js';
+  import {handlePromiseError} from '$lib/utils';
   import AlbumSummary from './album-summary.svelte';
-  import { t } from 'svelte-i18n';
+  import {t} from 'svelte-i18n';
 
   export let sharedLink: SharedLinkResponseDto;
   export let user: UserResponseDto | undefined = undefined;
@@ -66,28 +64,24 @@
     </AssetSelectControlBar>
   {:else}
     <ControlAppBar showBackButton={false}>
-      <svelte:fragment slot="leading">
+      <svelte:fragment>
+        <div class="text-center w-full">
         <ImmichLogoSmallLink width={innerWidth} />
+        </div>
       </svelte:fragment>
 
       <svelte:fragment slot="trailing">
         {#if sharedLink.allowUpload}
+          <div class="fixed bottom-0 left-0 right-0 flex justify-center my-3">
           <CircleIconButton
+            color="primary"
             title={$t('add_photos')}
+            size="60"
             on:click={() => openFileUploadDialog({ albumId: album.id })}
             icon={mdiFileImagePlusOutline}
           />
+          </div>
         {/if}
-
-        {#if album.assetCount > 0 && sharedLink.allowDownload}
-          <CircleIconButton
-            title={$t('download')}
-            on:click={() => downloadAlbum(album)}
-            icon={mdiFolderDownloadOutline}
-          />
-        {/if}
-
-        <ThemeButton />
       </svelte:fragment>
     </ControlAppBar>
   {/if}

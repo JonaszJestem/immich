@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { browser } from '$app/environment';
+  import {browser} from '$app/environment';
 
-  import { createEventDispatcher, onDestroy, onMount } from 'svelte';
+  import {createEventDispatcher, onDestroy, onMount} from 'svelte';
   import CircleIconButton from '../elements/buttons/circle-icon-button.svelte';
-  import { fly } from 'svelte/transition';
-  import { mdiClose } from '@mdi/js';
-  import { isSelectingAllAssets } from '$lib/stores/assets.store';
-  import { t } from 'svelte-i18n';
+  import {fly} from 'svelte/transition';
+  import {mdiClose} from '@mdi/js';
+  import {isSelectingAllAssets} from '$lib/stores/assets.store';
+  import {t} from 'svelte-i18n';
 
   export let showBackButton = true;
   export let backIcon = mdiClose;
@@ -47,6 +47,7 @@
       document.removeEventListener('scroll', onScroll);
     }
   });
+  const SLOTS = $$props.$$slots
 
   $: buttonClass = forceDark ? 'hover:text-immich-dark-gray' : undefined;
 </script>
@@ -58,19 +59,24 @@
       forceDark && 'bg-immich-dark-gray text-white'
     }`}
   >
-    <div class="flex place-items-center sm:gap-6 justify-self-start dark:text-immich-dark-fg">
-      {#if showBackButton}
-        <CircleIconButton title={$t('close')} on:click={handleClose} icon={backIcon} size={'24'} class={buttonClass} />
-      {/if}
-      <slot name="leading" />
-    </div>
+    {#if showBackButton || SLOTS.leading}
+      <div class="flex place-items-center sm:gap-6 justify-self-start dark:text-immich-dark-fg">
+        {#if showBackButton}
+          <CircleIconButton title={$t('close')} on:click={handleClose} icon={backIcon} size={'24'} class={buttonClass}/>
+        {/if}
+        <slot name="leading"/>
+      </div>
+
+    {:else}
+      <div></div>
+    {/if}
 
     <div class="w-full">
-      <slot />
+      <slot/>
     </div>
 
     <div class="mr-4 flex place-items-center gap-1 justify-self-end">
-      <slot name="trailing" />
+      <slot name="trailing"/>
     </div>
   </div>
 </div>

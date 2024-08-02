@@ -67,7 +67,7 @@
     dark: 'bg-[#202123] hover:bg-[#d3d3d3]',
     gray: 'bg-[#d3d3d3] hover:bg-[#e2e7e9] text-immich-dark-gray hover:text-black',
     primary:
-      'bg-immich-primary dark:bg-immich-dark-primary hover:bg-immich-primary/75 hover:dark:bg-immich-dark-primary/80 text-white dark:text-immich-dark-gray',
+      'bg-immich-primary dark:bg-opacity-90 dark:bg-immich-dark-primary hover:bg-immich-primary/75 hover:dark:bg-immich-dark-primary/80 text-white dark:text-immich-dark-gray',
   };
 
   const paddingClasses: Record<Padding, string> = {
