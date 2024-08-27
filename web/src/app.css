@@ -14,13 +14,13 @@
     --immich-warning: 255 183 77;
 
     /* dark */
-    --immich-dark-primary: 85 62 41;
-    --immich-dark-bg: 0 0 0;
-    --immich-dark-fg: 229 231 235;
-    --immich-dark-gray: 33 33 33;
-    --immich-dark-error: 211 47 47;
-    --immich-dark-success: 56 142 60;
-    --immich-dark-warning: 245 124 0;
+    --immich-dark-primary: 46 78 67;
+    --immich-dark-bg: 245 249 232;
+    --immich-dark-fg: 0 0 0;
+    --immich-dark-gray: 246 246 244;
+    --immich-dark-error: 229 115 115;
+    --immich-dark-success: 129 199 132;
+    --immich-dark-warning: 255 183 77;
   }
 }
 
