@@ -5,8 +5,8 @@
 @layer base {
   :root {
     /* light */
-    --immich-primary: 66 80 175;
-    --immich-bg: 255 255 255;
+    --immich-primary: 46 78 67;
+    --immich-bg: 245 249 232;
     --immich-fg: 0 0 0;
     --immich-gray: 246 246 244;
     --immich-error: 229 115 115;

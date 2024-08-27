@@ -72,7 +72,7 @@
 
       <svelte:fragment slot="trailing">
         {#if sharedLink.allowUpload}
-          <div class="fixed bottom-0 left-0 right-0 flex justify-center my-3">
+          <div class="fixed bottom-0 left-0 right-0 flex justify-center my-3 w-[85px] mx-auto">
           <CircleIconButton
             color="primary"
             title={$t('add_photos')}
@@ -87,12 +87,12 @@
   {/if}
 </header>
 
-<main class="relative h-screen overflow-hidden bg-immich-bg px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg">
+<main class="relative h-screen overflow-hidden px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg">
   <AssetGrid {album} {assetStore} {assetInteractionStore}>
     <section class="pt-8 md:pt-24">
       <!-- ALBUM TITLE -->
       <h1
-        class="bg-immich-bg text-2xl md:text-4xl lg:text-6xl text-immich-primary outline-none transition-all dark:bg-immich-dark-bg dark:text-immich-dark-primary"
+        class="text-2xl md:text-4xl lg:text-6xl text-immich-primary outline-none transition-all dark:bg-immich-dark-bg dark:text-immich-dark-primary"
       >
         {album.albumName}
       </h1>

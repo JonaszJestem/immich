@@ -55,7 +55,7 @@
 <div in:fly={{ y: 10, duration: 200 }} class="absolute top-0 w-full z-[100] bg-transparent">
   <div
     id="asset-selection-app-bar"
-    class={`grid grid-cols-[10%_80%_10%] justify-between sm:grid-cols-[25%_50%_25%] lg:grid-cols-[25%_50%_25%]  ${appBarBorder} mx-2 mt-2 place-items-center rounded-lg p-2 transition-all ${tailwindClasses} dark:bg-immich-dark-gray ${
+    class={`bg-opacity-80 grid grid-cols-[10%_80%_10%] justify-between sm:grid-cols-[25%_50%_25%] bg-[rgba(113,136,120,0.5)] lg:grid-cols-[25%_50%_25%]  ${appBarBorder} mx-2 mt-2 place-items-center rounded-lg p-2 transition-all ${tailwindClasses} dark:bg-immich-dark-gray ${
       forceDark && 'bg-immich-dark-gray text-white'
     }`}
   >

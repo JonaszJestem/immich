@@ -4,6 +4,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      backgroundImage: {
+        'eucalyptus': 'url("/background.png")',
+      },
       colors: {
         // Light Theme
         'immich-primary': 'rgb(var(--immich-primary) / <alpha-value>)',
