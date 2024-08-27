@@ -439,7 +439,7 @@
   {/if}
 </header>
 
-<main class="relative h-screen overflow-hidden bg-immich-bg tall:ml-4 pt-[var(--navbar-height)] dark:bg-immich-dark-bg">
+<main class="relative h-screen overflow-hidden tall:ml-4 pt-[var(--navbar-height)] dark:bg-immich-dark-bg  bg-eucalyptus bg-opacity-40 bg-cover bg-no-repeat bg-center">
   {#key refreshAssetGrid}
     <AssetGrid
       {assetStore}

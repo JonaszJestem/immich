@@ -87,7 +87,7 @@
   {/if}
 </header>
 
-<main class="relative h-screen overflow-hidden px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg">
+<main class="relative h-screen overflow-hidden px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg px-6 pt-[var(--navbar-height)] dark:bg-immich-dark-bg  bg-eucalyptus bg-opacity-40 bg-cover bg-no-repeat bg-center">
   <AssetGrid {album} {assetStore} {assetInteractionStore}>
     <section class="pt-8 md:pt-24">
       <!-- ALBUM TITLE -->
